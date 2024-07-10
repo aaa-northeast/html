@@ -765,14 +765,14 @@ class FormBuilder
      * Get the select option for the given value.
      *
      * @param string|array|Collection $display
-     * @param string $value
+     * @param string|int $value
      * @param string|array|Collection|null $selected
      * @param array $attributes
      * @param array $optgroupAttributes
      *
      * @return HtmlString|string
      */
-    public function getSelectOption(string|array|Collection $display, string $value, string|array|Collection|null $selected, array $attributes = [], array $optgroupAttributes = []): HtmlString|string
+    public function getSelectOption(string|array|Collection $display, string|int $value, string|array|Collection|null $selected, array $attributes = [], array $optgroupAttributes = []): HtmlString|string
     {
         if (is_iterable($display)) {
             return $this->optionGroup($display, $value, $selected, $optgroupAttributes, $attributes);
@@ -812,13 +812,13 @@ class FormBuilder
      * Create a select element option.
      *
      * @param string|null $display
-     * @param string $value
+     * @param string|int $value
      * @param string|array|Collection|null $selected
      * @param array $attributes
      *
      * @return HtmlString|string
      */
-    protected function option(string|null $display, string $value, string|array|Collection|null $selected = null, array $attributes = []): HtmlString|string
+    protected function option(string|null $display, string|int $value, string|array|Collection|null $selected = null, array $attributes = []): HtmlString|string
     {
         $selected = $this->getSelectedValue($value, $selected);
 
